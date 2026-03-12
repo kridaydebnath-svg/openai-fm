@@ -1,0 +1,122 @@
+:root {
+  --bg: #0f1225;
+  --card: #1b2145;
+  --text: #f2f4ff;
+  --accent: #7df9ff;
+  --danger: #ff5c8a;
+  --ok: #6fffa8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at top, #1f2b66, var(--bg));
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.container {
+  width: min(900px, 100%);
+  background: color-mix(in srgb, var(--card) 88%, black);
+  border: 1px solid #39407b;
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+.subtitle {
+  opacity: 0.9;
+  margin-top: 0.35rem;
+}
+
+.hud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.hud > div {
+  background: #10163a;
+  border: 1px solid #2f3769;
+  border-radius: 999px;
+  padding: 0.45rem 0.85rem;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.crewmate {
+  border: 2px solid #4b5ac0;
+  background: #161d40;
+  border-radius: 14px;
+  min-height: 110px;
+  display: grid;
+  place-content: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  transition: transform 120ms ease, border-color 120ms ease;
+}
+
+.crewmate:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+.crewmate.out {
+  opacity: 0.35;
+  filter: grayscale(1);
+  cursor: not-allowed;
+}
+
+.controls {
+  display: flex;
+  gap: 0.7rem;
+  margin-bottom: 0.8rem;
+}
+
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  font-weight: 700;
+  color: #0b0f23;
+  background: var(--accent);
+  cursor: pointer;
+}
+
+button:last-child {
+  background: #bec9ff;
+}
+
+.message {
+  margin: 0;
+  border-left: 3px solid var(--accent);
+  padding-left: 0.6rem;
+}
+
+.message.win {
+  border-color: var(--ok);
+  color: var(--ok);
+}
+
+.message.lose {
+  border-color: var(--danger);
+  color: var(--danger);
+}
