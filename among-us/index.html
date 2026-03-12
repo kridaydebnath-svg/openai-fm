@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Among Us - Find the Impostor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>🚀 Among Us: Find the Impostor</h1>
+    <p class="subtitle">Complete tasks and vote out the impostor before time runs out.</p>
+
+    <section class="hud">
+      <div>⏱️ Time: <span id="time">60</span>s</div>
+      <div>✅ Tasks: <span id="tasks">0</span>/5</div>
+      <div>🗳️ Votes Left: <span id="votes">3</span></div>
+    </section>
+
+    <section class="game-board" id="gameBoard"></section>
+
+    <section class="controls">
+      <button id="taskBtn">Do a Task</button>
+      <button id="restartBtn">Restart</button>
+    </section>
+
+    <p id="message" class="message">Tip: Click a crewmate to vote them out.</p>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
